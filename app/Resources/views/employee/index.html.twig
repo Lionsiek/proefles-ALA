@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Employees list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Street</th>
+                <th>Streetnumber</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Cityofbirth</th>
+                <th>Countryofbirth</th>
+                <th>Email</th>
+                <th>Station</th>
+                <th>Department</th>
+                <th>Dateofbirth</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for employee in employees %}
+            <tr>
+                <td><a href="{{ path('employee_show', { 'id': employee.id }) }}">{{ employee.id }}</a></td>
+                <td>{{ employee.firstName }}</td>
+                <td>{{ employee.lastName }}</td>
+                <td>{{ employee.street }}</td>
+                <td>{{ employee.streetNumber }}</td>
+                <td>{{ employee.city }}</td>
+                <td>{{ employee.country }}</td>
+                <td>{{ employee.cityOfBirth }}</td>
+                <td>{{ employee.countryOfBirth }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.station }}</td>
+                <td>{{ employee.department }}</td>
+                <td>{% if employee.dateOfBirth %}{{ employee.dateOfBirth|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('employee_show', { 'id': employee.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('employee_edit', { 'id': employee.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('employee_new') }}">Create a new employee</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Appointments list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Lessonid</th>
+                <th>Employee</th>
+                <th>Customerid</th>
+                <th>Comment</th>
+                <th>Datepicker</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for appointment in appointments %}
+            <tr>
+                <td><a href="{{ path('appointment_show', { 'id': appointment.id }) }}">{{ appointment.id }}</a></td>
+                <td>{{ appointment.name }}</td>
+                <td>{{ appointment.location }}</td>
+                <td>{{ appointment.lessonId }}</td>
+                <td>{{ appointment.employee }}</td>
+                <td>{{ appointment.customerId }}</td>
+                <td>{{ appointment.comment }}</td>
+                <td>{% if appointment.datepicker %}{{ appointment.datepicker|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('appointment_show', { 'id': appointment.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('appointment_edit', { 'id': appointment.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('appointment_new') }}">Create a new appointment</a>
+        </li>
+    </ul>
+{% endblock %}

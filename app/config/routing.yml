@@ -1,0 +1,8 @@
+proefles:
+    resource: "@proeflesBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

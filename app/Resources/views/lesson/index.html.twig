@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lessons list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Employee</th>
+                <th>Customerid</th>
+                <th>Dateoflesson</th>
+                <th>Lessonfrom</th>
+                <th>Lessonuntil</th>
+                <th>Comment</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lesson in lessons %}
+            <tr>
+                <td><a href="{{ path('lesson_show', { 'id': lesson.id }) }}">{{ lesson.id }}</a></td>
+                <td>{{ lesson.name }}</td>
+                <td>{{ lesson.employee }}</td>
+                <td>{{ lesson.customerId }}</td>
+                <td>{% if lesson.dateOfLesson %}{{ lesson.dateOfLesson|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if lesson.lessonFrom %}{{ lesson.lessonFrom|date('H:i:s') }}{% endif %}</td>
+                <td>{% if lesson.lessonUntil %}{{ lesson.lessonUntil|date('H:i:s') }}{% endif %}</td>
+                <td>{{ lesson.comment }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lesson_show', { 'id': lesson.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('lesson_edit', { 'id': lesson.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lesson_new') }}">Create a new lesson</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,48 +1,48 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Customer</h1>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Leden</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Verwijder lid">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ customer.id }}</td>
-            </tr>
-            <tr>
-                <th>Firstname</th>
-                <td>{{ customer.firstName }}</td>
-            </tr>
-            <tr>
-                <th>Lastname</th>
-                <td>{{ customer.lastName }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ customer.email }}</td>
-            </tr>
-            <tr>
-                <th>Dateofbirth</th>
-                <td>{% if customer.dateOfBirth %}{{ customer.dateOfBirth|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Telephonenumber</th>
-                <td>{{ customer.telephoneNumber }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <h2>Lid {{ customer.id }}</h2>
+        <div class="table-responsive">
+            <table class="table">
 
-    <ul>
-        <li>
-            <a href="{{ path('customer_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('customer_edit', { 'id': customer.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                <tr>
+                    <td>Voornaam</td>
+                    <td><input type="text" class="form-control" value="{{ customer.firstName }}" readonly></td>
+                </tr>
+
+                <tr>
+                    <td>Achternaam</td>
+                    <td><input type="text" class="form-control" value="{{ customer.lastName }}" readonly></td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+                <td><input type="text" class="form-control" value="{{ customer.email }}" readonly></td>
+                </tr>
+                <tr>
+                <td>Geboortedatum</td>
+                <td><input type="text" class="form-control" value="{% if customer.dateOfBirth %}{{ customer.dateOfBirth|date('Y-m-d') }}{% endif %}" readonly></td>
+                </tr>
+                <tr>
+                <td>Telefoonnummer</td>
+                <td><input type="text" class="form-control" value="{{ customer.telephoneNumber }}" readonly></td>
+                </tr>
+            </table>
+            <a class="btn btn-info" href="{{ path('customer_edit', { 'id': customer.id }) }}">Bewerk</a>
+            <a class="btn btn-info" href="{{ path('customer_index') }}">Terug naar het overzicht</a>
+        </div>
+    </main>
+    </div>
+    </div>
+
 {% endblock %}

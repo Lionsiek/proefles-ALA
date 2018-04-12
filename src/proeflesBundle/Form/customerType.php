@@ -3,6 +3,7 @@
 namespace proeflesBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,7 +14,7 @@ class customerType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstName')->add('lastName')->add('email')->add('dateOfBirth')->add('telephoneNumber');
+        $builder->add('firstName')->add('lastName')->add('email')->add('dateOfBirth',DateType::class, [ 'years' => range(date('Y') -100, date('Y')),])->add('telephoneNumber');
     }
     
     /**

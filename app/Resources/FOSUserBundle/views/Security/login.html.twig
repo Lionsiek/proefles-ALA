@@ -1,6 +1,105 @@
 {% extends 'base.html.twig' %}
 
 {% trans_default_domain 'FOSUserBundle' %}
+{% block stylesheets%}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        *:focus {
+            outline: none;
+        }
+        body {
+            font-family: Arial;
+            /*background-image: url("../img/blur-wallpaper-26335-27026-hd-wallpapers.jpg");*/
+            padding: 50px;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #131838, #4B286C);
+        }
+        .login {
+            margin: 90px auto;
+            width: 300px;
+        }
+
+        .proefles {
+            margin: 90px auto;
+            width: 300px;
+        }
+
+        .login-screen {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 5px
+        }
+        .app-title {
+            text-align: center;
+            color: #777;
+        }
+        .login-form {
+            text-align: center;
+        }
+        .control-group {
+            margin-bottom: 10px;
+        }
+        input {
+            text-align: center;
+            background-color: #f2f2f2;
+            border: 2px solid transparent;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: 200;
+            padding: 10px 0;
+            width: 250px;
+            transition: border .5s;
+        }
+
+        input:focus {
+            border: 2px solid #36B8E9;
+            box-shadow: none;
+        }
+        .btn {
+            border: 2px solid transparent;
+            background: linear-gradient(to bottom right, #E94051, #E87A1F);
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 25px;
+            padding: 10px 0;
+            text-decoration: none;
+            text-shadow: none;
+            border-radius: 3px;
+            box-shadow: none;
+            transition: .25s;
+            display: block;
+            width: 250px;
+            margin: 0 auto;
+        }
+
+        .login-link {
+            font-size: 12px;
+            color: #444;
+            display: block;
+            margin-top: 12px;
+        }
+
+        .hvr-grow {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            backface-visibility: hidden;
+            transition-duration: .3s;
+            transition-property: transform;
+        }
+
+        .hvr-grow:hover,
+        .hvr-grow:focus,
+        .hvr-grow:active {
+            transform: scale(1.05);
+        }
+    </style>
+    {#<link rel="stylesheet" href="{{ asset('css/.css') }}">#}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+{% endblock %}
 {% block content %}
     <div class="proefles animated bounceInLeft">
         <div class="login-screen">

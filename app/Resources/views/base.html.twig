@@ -3,9 +3,108 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets%}
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Roboto" rel="stylesheet">
+            <meta charset="UTF-8"/>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+            <title>{% block title %}Welcome!{% endblock %}</title>
+            <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
 
+        {% block stylesheets%}
+            <style>
+                * {
+                    box-sizing: border-box;
+                }
+                *:focus {
+                    outline: none;
+                }
+                body {
+                    font-family: Arial;
+                    /*background-image: url("../img/blur-wallpaper-26335-27026-hd-wallpapers.jpg");*/
+                    padding: 50px;
+                    height: 100vh;
+                    background: linear-gradient(to bottom right, #131838, #4B286C);
+                }
+                .login {
+                    margin: 90px auto;
+                    width: 300px;
+                }
+
+                .proefles {
+                    margin: 90px auto;
+                    width: 300px;
+                }
+
+                .login-screen {
+                    background-color: #FFF;
+                    padding: 20px;
+                    border-radius: 5px
+                }
+                .app-title {
+                    text-align: center;
+                    color: #777;
+                }
+                .login-form {
+                    text-align: center;
+                }
+                .control-group {
+                    margin-bottom: 10px;
+                }
+                input {
+                    text-align: center;
+                    background-color: #f2f2f2;
+                    border: 2px solid transparent;
+                    border-radius: 3px;
+                    font-size: 16px;
+                    font-weight: 200;
+                    padding: 10px 0;
+                    width: 250px;
+                    transition: border .5s;
+                }
+
+                input:focus {
+                    border: 2px solid #36B8E9;
+                    box-shadow: none;
+                }
+                .btn {
+                    border: 2px solid transparent;
+                    background: linear-gradient(to bottom right, #E94051, #E87A1F);
+                    color: #ffffff;
+                    font-size: 16px;
+                    line-height: 25px;
+                    padding: 10px 0;
+                    text-decoration: none;
+                    text-shadow: none;
+                    border-radius: 3px;
+                    box-shadow: none;
+                    transition: .25s;
+                    display: block;
+                    width: 250px;
+                    margin: 0 auto;
+                }
+
+                .login-link {
+                    font-size: 12px;
+                    color: #444;
+                    display: block;
+                    margin-top: 12px;
+                }
+
+                .hvr-grow {
+                    display: inline-block;
+                    vertical-align: middle;
+                    transform: translateZ(0);
+                    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+                    backface-visibility: hidden;
+                    transition-duration: .3s;
+                    transition-property: transform;
+                }
+
+                .hvr-grow:hover,
+                .hvr-grow:focus,
+                .hvr-grow:active {
+                    transform: scale(1.05);
+                }
+            </style>
         {#<link rel="stylesheet" href="{{ asset('css/.css') }}">#}
         {% endblock %}
 
@@ -14,7 +113,9 @@
     </head>
 
     <body>
-        {% block body %}{% endblock %}
+    {% block content %}
+    {% endblock %}
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

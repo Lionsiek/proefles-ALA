@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block content %}
+    <div class="proefles animated bounceInLeft">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Proefles</h1>
+            </div>
+            <div class="login-form">
+                <a class="btn btn-primary btn-large btn-block hvr-grow" href="#">Registreer nu</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+            <h1>er is iets out gegaan olem</h1>
+        </div>
+    {% endif %}
+    <div class="login animated bounceInRight">
+        <div class="login-screen">
+            <form action="{{ path("fos_user_security_check") }}" method="post" class="formsignin">
+                <input  class="login-field" type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                <div class="app-title">
+                    <h1>Login</h1>
+                </div>
+                <div class="login-form">
+                    <div class="control-group">
+                        <label for="username" class="sr-only login-field-icon fui-user">{{ 'security.login.username'| trans }}</label>
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Email address" class="form-control login-field"
+                               required autofocus />
+                    </div>
+                    <div class="control-group">
+                        <label for="password" class="sr-only login-field-icon fui-user">{{ 'security.login.password'| trans }}</label>
+                        <input type="password" id="password" name="_password" class="form-control login-field" placeholder="Password" required />
+                    </div>
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox"
+                               id="remember_me"
+                               name="_remember_me"
+                               value="on" /> {{ 'security.login.remember_me'|trans }}
+                    </label>
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <label class="pull-right"><a
+                                    href="{{ path('fos_user_registration_register') }}">Nog geen account, maak er
+                                een aan.</a></label>
+                    {% endif %}
+                    </div>
+                <input type="submit"
+                       class="btn btn-lg btn-primary btn-block"
+                       id="_submit"
+                       name="_submit"
+                       value="{{ 'security.login.submit'|trans }}" />
+                    <a class="login-link" href="#">Wachtwoord vergeten?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

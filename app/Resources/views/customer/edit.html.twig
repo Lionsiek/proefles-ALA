@@ -1,21 +1,46 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Customer edit</h1>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Leden</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+                {{ form_start(delete_form) }}
+                <input class="btn btn-danger" type="submit" value="Verwijder lid">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        <h2>Bewerk Lid {{ customer.id }}</h2>
+        <div class="table-responsive">
+            <table class="table">
+            {{ form_start(edit_form) }}
+                    <tr>
+                        <td>Voornaam</td>
+                        <td>{{ form_widget(edit_form.firstName) }}</td>
+                    </tr>
 
-    <ul>
-        <li>
-            <a href="{{ path('customer_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                    <tr>
+                        <td>Achternaam</td>
+                        <td>{{ form_widget(edit_form.lastName) }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Email</td>
+                        <td>{{ form_widget(edit_form.email) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Geboortedatum</td>
+                        <td>{{ form_widget(edit_form.dateOfBirth) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Telefoonnummer</td>
+                        <td>{{ form_widget(edit_form.telephoneNumber) }}</td>
+                    </tr>
+                </table>
+                <input class="btn btn-primary my-2" type="submit" value="Opslaan" />
+                <a class="btn btn-info" href="{{ path('customer_index') }}">Terug naar het overzicht</a>
+            {{ form_end(edit_form) }}
+        </div>
+    </main>
 {% endblock %}

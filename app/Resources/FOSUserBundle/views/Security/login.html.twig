@@ -68,7 +68,7 @@
             text-shadow: none;
             border-radius: 3px;
             box-shadow: none;
-            transition: .25s;
+            transition: .25s ease-in-out;
             display: block;
             width: 250px;
             margin: 0 auto;
@@ -87,7 +87,7 @@
             transform: translateZ(0);
             box-shadow: 0 0 1px rgba(0, 0, 0, 0);
             backface-visibility: hidden;
-            transition-duration: .3s;
+            transition-duration: .3s ease-in-out;
             transition-property: transform;
         }
 
@@ -117,7 +117,7 @@
     {% if error %}
         <div class="alert alert-danger" role="alert">
             {{ error.messageKey|trans(error.messageData, 'security') }}
-            <h1>er is iets out gegaan olem</h1>
+            <h1>er is iets fout gegaan</h1>
         </div>
     {% endif %}
     <div class="login animated bounceInRight">
@@ -151,7 +151,7 @@
                     {% endif %}
                     </div>
                 <input type="submit"
-                       class="btn btn-lg btn-primary btn-block"
+                       class="btn btn-lg btn-primary btn-block hvr-grow"
                        id="_submit"
                        name="_submit"
                        value="{{ 'security.login.submit'|trans }}" />
@@ -159,5 +159,10 @@
                 </div>
             </form>
         </div>
+    </div>
+{% endblock %}
+{% block body%}
+    <div>
+        
     </div>
 {% endblock %}

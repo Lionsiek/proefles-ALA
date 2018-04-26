@@ -21,4 +21,20 @@ class PagesController extends Controller
 			return $this->render('pages/picklocations.html.twig');
 		}
 
+		/**
+		 * @Route("/reg", name="regestration")
+		 */
+
+	public function index2action()
+{
+	return$this->render('pages/registration.html.twig');
 }
+
+	public function index3action()
+	{
+		return$this->render('pages/congratzz.html.twig');
+	}
+
+}
+
+

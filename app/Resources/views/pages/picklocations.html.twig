@@ -7,6 +7,10 @@
              margin: 0;
          }
 
+         .container-pick{
+             margin: 0;
+         }
+
          .navbar {
              width: 100vw;
              height: 70px;
@@ -22,32 +26,115 @@
          }
 
          .navbar-home {
-             float: right;
+             color: #FFFFFF;
+             display: flex;
+             align-self: flex-end;
              font-family: Lobster;
              text-decoration: none;
+
          }
 
+         .navbar-list{
+             display: flex;
+             flex-direction: row;
+             align-content: space-around;
+             list-style-type: none;
+             width: 100%;
+         }
+
+         .navbar-homelist{
+             display: flex;
+             align-self: flex-end;
+             padding-left: 80vw;
+         }
+
+         .dropbtn {
+             background-color: #26C485;
+             color: white;
+             padding: 16px;
+             font-size: 16px;
+             border: none;
+             cursor: pointer;
+         }
+
+         .dropdown {
+             position: relative;
+             display: inline-block;
+         }
+
+
+         .dropdown-content {
+             display: none;
+             position: absolute;
+             background-color: #f9f9f9;
+             min-width: 160px;
+             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+             z-index: 1;
+         }
+
+
+         .dropdown-content a {
+             color: black;
+             padding: 12px 16px;
+             text-decoration: none;
+             display: block;
+         }
+
+
+         .dropdown-content a:hover {background-color: #f1f1f1}
+
+
+         .dropdown:hover .dropdown-content {
+             display: block;
+         }
+
+
+         .dropdown:hover .dropbtn {
+             background-color: #26C485;
+         }
 
      </style>
 
  {% endblock %}
 
   {% block content %}
-<link href="//maxcdngit statusgbootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
-      id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Roboto|Titillium+Web" rel="stylesheet">
-<!------ Include the above in your HEAD tag ---------->
+      <link href="//maxcdngit statusgbootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+            id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Roboto|Titillium+Web" rel="stylesheet">
+      <!------ Include the above in your HEAD tag ---------->
 
+      <div class="container-pick">
 
-<div class="container">
+          <div class="navbar">
+              <ul class="navbar-list">
+                  <li><h1 class="navbar-h1">Wing-Chun</h1></li>
+                  <li class="navbar-homelist"><a class="navbar-home" href="https://www.wingchun.nl/">Home</a></li>
+              </ul>
+          </div>
+      </div>
 
-    <div class="navbar">
-        <li>
-            <h1 class="navbar-h1">Wing-Chun</h1>
-            <a class="navbar-home" href="https://www.wingchun.nl/">Home</a>
-    </div>
-    </li>
-    {% endblock %}
+      <div class="body">
+
+          <div class="dropdown">
+              <button class="dropbtn">Dropdown</button>
+              <div class="dropdown-content">
+                  <a href="#">Zuid-Holland</a>
+                  <a href="#">Noord-Holland</a>
+                  <a href="#">Groningen</a>
+                  <a href="#">Friesland</a>
+                  <a href="#">Drenthe</a>
+                  <a href="#">Overijssel</a>
+                  <a href="#">Flevoland</a>
+                  <a href="#">Gelderland</a>
+                  <a href="#">Utrecht</a>
+                  <a href="#">Zeeland</a>
+                  <a href="#">Noord-Brabant</a>
+                  <a href="#">Limburg</a>
+
+              </div>
+          </div>
+      </div>
+  {% endblock %}
 

@@ -1,0 +1,53 @@
+{#{% extends 'base.html.twig' %}#}
+
+ {% block stylesheets %}
+     <style>
+         * {
+             padding: 0;
+             margin: 0;
+         }
+
+         .navbar {
+             width: 100vw;
+             height: 70px;
+             background-color: #343F3E;
+             border-bottom: 3px solid #26C485;
+         }
+
+         .navbar-h1 {
+             color: #FFFFFF;
+             font-family: Lobster;
+             padding: 5px 0 0 15px;
+             font-size: 40px;
+         }
+
+         .navbar-home {
+             float: right;
+             font-family: Lobster;
+             text-decoration: none;
+         }
+
+
+     </style>
+
+ {% endblock %}
+
+  {% block content %}
+<link href="//maxcdngit statusgbootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+      id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Roboto|Titillium+Web" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container">
+
+    <div class="navbar">
+        <li>
+            <h1 class="navbar-h1">Wing-Chun</h1>
+            <a class="navbar-home" href="https://www.wingchun.nl/">Home</a>
+    </div>
+    </li>
+    {% endblock %}
+

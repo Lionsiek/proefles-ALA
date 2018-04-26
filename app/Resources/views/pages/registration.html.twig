@@ -1,0 +1,254 @@
+{#{% extends 'base.html.twig' %}#}
+
+ {% block stylesheets %}
+     <style>
+         * {
+             padding: 0;
+             margin: 0;
+         }
+
+         .container-pick {
+             margin: 0;
+         }
+
+         .navbar {
+             width: 100vw;
+             height: 70px;
+             background-color: #343F3E;
+             border-bottom: 3px solid #26C485;
+         }
+
+         .navbar-h1 {
+             color: #FFFFFF;
+             font-family: Lobster;
+             padding: 5px 0 0 15px;
+             font-size: 40px;
+         }
+
+         .navbar-home {
+             color: #FFFFFF;
+             display: flex;
+             align-self: flex-end;
+             font-family: Lobster;
+             text-decoration: none;
+             padding-bottom: 8px;
+             font-size: 22px;
+
+         }
+
+         .navbar-list {
+             display: flex;
+             flex-direction: row;
+             align-content: space-around;
+             list-style-type: none;
+             width: 100%;
+         }
+
+         .navbar-homelist {
+             display: flex;
+             align-self: flex-end;
+             padding-left: 80vw;
+         }
+
+         .container-yourinfo {
+             border: 2px solid #343F3E;
+             width: 35vw;
+             height: 83vh;
+             margin: 3em 0 0 15rem;
+         }
+
+         .main-container {
+             display: flex;
+             flex-direction: row;
+             align-items: center;
+
+         }
+
+         .container-location {
+             border: 2px solid #343F3E;
+             width: 35vw;
+             height: 83vh;
+             margin: 3em 0 0 3rem;
+         }
+
+         .container-yourinfo-h1 {
+             text-align: center;
+             font-family: roboto;
+             border-bottom: 2px solid #343F3E;
+             color: #343F3E;
+         }
+
+         .container-location-h1 {
+             text-align: center;
+             font-family: roboto;
+             border-bottom: 2px solid #343F3E;
+             color: #343F3E;
+         }
+
+         .container {
+             max-width: 400px;
+             width: 100%;
+             margin: 0 auto;
+             position: relative;
+         }
+
+         #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] {
+             font: 400 12px/16px "Open Sans", Helvetica, Arial, sans-serif;
+         }
+
+         #contact {
+             padding: 25px;
+             margin: 50px 0;
+         }
+
+         #contact h3 {
+             color: #F96;
+             display: block;
+             font-size: 30px;
+             font-weight: 400;
+         }
+
+         #contact h4 {
+             margin: 5px 0 15px;
+             display: block;
+             font-size: 13px;
+         }
+
+         fieldset {
+             border: medium none !important;
+             margin: 0 0 10px;
+             min-width: 100%;
+             padding: 0;
+             width: 100%;
+         }
+
+         #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
+             width: 100%;
+             border: 1px solid #CCC;
+             background: #FFF;
+             margin: 0 0 5px;
+             padding: 10px;
+             height: 50px;
+         }
+
+         #contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
+             -webkit-transition: border-color 0.3s ease-in-out;
+             -moz-transition: border-color 0.3s ease-in-out;
+             transition: border-color 0.3s ease-in-out;
+             border: 1px solid #AAA;
+         }
+
+         #contact textarea {
+             height: 100px;
+             max-width: 100%;
+             resize: none;
+         }
+
+         #contact button[type="submit"] {
+             cursor: pointer;
+             width: 100%;
+             border: none;
+             background: #26C485;
+             color: #FFF;
+             margin: 0 0 5px;
+             padding: 10px;
+             font-size: 15px;
+             transition: .3s ease-in-out;
+             height: 65px;
+         }
+
+         #contact button[type="submit"]:hover {
+             background: #27b885;
+             -webkit-transition: background .3s ease-in-out;
+             -moz-transition: background .3s ease-in-out;
+             transition: background-color .3s ease-in-out;
+         }
+
+         #contact button[type="submit"]:active {
+             box-shadow: inset 0 1px 3px rgba(0, 0, 0, .5);
+         }
+
+         #contact input:focus, #contact textarea:focus {
+             outline: 0;
+             border: 1px solid #999;
+         }
+
+         ::-webkit-input-placeholder {
+             color: #888;
+         }
+
+         :-moz-placeholder {
+             color: #888;
+         }
+
+         ::-moz-placeholder {
+             color: #888;
+         }
+
+         :-ms-input-placeholder {
+             color: #888;
+         }
+
+
+     </style>
+
+ {% endblock %}
+
+  {% block content %}
+<link href="//maxcdngit statusgbootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+      id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Roboto|Titillium+Web" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container-pick">
+
+    <div class="navbar">
+        <ul class="navbar-list">
+            <li><h1 class="navbar-h1">Wing-Chun</h1></li>
+            <li class="navbar-homelist"><a class="navbar-home" href="https://www.wingchun.nl/">Home</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main-container">
+        <div class="container-yourinfo">
+            <h1 class="container-yourinfo-h1">Uw informatie</h1>
+            <div class="container">
+                <form id="contact" action="" method="post">
+                    <fieldset>
+                        <input placeholder="Voornaam" type="text" tabindex="1" required autofocus>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Achternaam" type="text" tabindex="2" required autofocus>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="E-Mail" type="email" tabindex="3" required>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Telefoonnummer" type="tel" tabindex="4" required>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="geboortedatum" type="text" tabindex="5" required autofocus>
+                    </fieldset>
+                    <fieldset>
+                        <textarea placeholder="Heeft u blessures of iets anders waarmee wij rekening moeten houden?" tabindex="5" required></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                    </fieldset>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="container-location">
+            <h1 class="container-location-h1">Uw gekozen locatie</h1>
+
+        </div>
+    </div>
+</div>
+
+    {% endblock %}
+

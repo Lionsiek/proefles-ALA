@@ -5,6 +5,7 @@ namespace proeflesBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ *
  * employee
  *
  * @ORM\Table(name="employee")
@@ -85,11 +86,13 @@ class employee
     private $email;
 
     /**
-     * @var int
      *
-     * @ORM\Column(name="station", type="integer")
+     *
+     * @ORM\ManyToOne(targetEntity="proeflesBundle\Entity\location")
+     * @ORM\JoinColumn(name="station", referencedColumnName="id")
      */
     private $station;
+
 
     /**
      * @var string
@@ -97,6 +100,14 @@ class employee
      * @ORM\Column(name="department", type="string", length=255)
      */
     private $department;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephonenumber", type="string", length=255)
+     */
+    private $telephonenumber;
+
 
     /**
      * @var \DateTime
@@ -381,6 +392,31 @@ class employee
     }
 
     /**
+     * Set telephonenumber
+     *
+     * @param string $telephonenumber
+     *
+     * @return employee
+     */
+    public function settelephonenumber($telephonenumber)
+    {
+        $this->telephonenumber = $telephonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Get telephonenumber
+     *
+     * @return string
+     */
+    public function gettelephonenumber()
+    {
+        return $this->telephonenumber;
+    }
+
+
+    /**
      * Set dateOfBirth
      *
      * @param \DateTime $dateOfBirth
@@ -402,6 +438,11 @@ class employee
     public function getDateOfBirth()
     {
         return $this->dateOfBirth;
+    }
+
+    public function __toString()
+    {
+        return $this->getId() . ' ' . $this->getFirstName() . ' ' . $this->getLastName();
     }
 }
 

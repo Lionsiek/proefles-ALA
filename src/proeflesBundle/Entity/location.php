@@ -217,5 +217,9 @@ class location
     {
         return $this->country;
     }
+    public function __toString()
+    {
+        return $this->getId() . ' ' . $this->getName();
+    }
 }
 

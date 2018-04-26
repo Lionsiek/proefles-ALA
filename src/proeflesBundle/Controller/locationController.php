@@ -14,12 +14,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class locationController extends Controller
 {
+    // ...
+
     /**
      * Lists all location entities.
      *
      * @Route("/", name="location_index")
      * @Method("GET")
      */
+
+
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -28,6 +32,7 @@ class locationController extends Controller
 
         return $this->render('location/index.html.twig', array(
             'locations' => $locations,
+
         ));
     }
 
@@ -63,12 +68,16 @@ class locationController extends Controller
      * @Route("/{id}", name="location_show")
      * @Method("GET")
      */
-    public function showAction(location $location)
+    public function showAction(location $location, $id)
     {
+        $em = $this->getDoctrine()->getManager();
+        $employee = $em->getRepository('proeflesBundle:employee')->find($id);
+
         $deleteForm = $this->createDeleteForm($location);
 
         return $this->render('location/show.html.twig', array(
             'location' => $location,
+            'employee' => $employee,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -132,5 +141,10 @@ class locationController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function __toString()
+    {
+        return $this->getId() . ' ' . $this->getFirstName() . ' ' . $this->getLastName();
     }
 }

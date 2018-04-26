@@ -3,6 +3,8 @@
 namespace proeflesBundle\Controller;
 
 use proeflesBundle\Entity\employee;
+use proeflesBundle\Entity\location;
+use proeflesBundle\Form\locationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -41,11 +43,12 @@ class employeeController extends Controller
     {
         $employee = new Employee();
         $form = $this->createForm('proeflesBundle\Form\employeeType', $employee);
+        $location = new location();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($employee);
+            $em->persist($employee, $location);
             $em->flush();
 
             return $this->redirectToRoute('employee_show', array('id' => $employee->getId()));
@@ -63,12 +66,15 @@ class employeeController extends Controller
      * @Route("/{id}", name="employee_show")
      * @Method("GET")
      */
-    public function showAction(employee $employee)
+    public function showAction(employee $employee )
     {
+        $em = $this->getDoctrine()->getManager();
+        $location = $em->getRepository('proeflesBundle:location')->findby(['id' => $employee->getStation()]);
         $deleteForm = $this->createDeleteForm($employee);
 
         return $this->render('employee/show.html.twig', array(
             'employee' => $employee,
+            'location' => $location,
             'delete_form' => $deleteForm->createView(),
         ));
     }

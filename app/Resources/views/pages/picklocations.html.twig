@@ -7,7 +7,7 @@
              margin: 0;
          }
 
-         .container-pick{
+         .container-pick {
              margin: 0;
          }
 
@@ -34,7 +34,7 @@
              padding-bottom: 10px;
          }
 
-         .navbar-list{
+         .navbar-list {
              display: flex;
              flex-direction: row;
              align-content: space-around;
@@ -42,7 +42,7 @@
              width: 100%;
          }
 
-         .navbar-homelist{
+         .navbar-homelist {
              display: flex;
              align-self: flex-end;
              padding-left: 80vw;
@@ -66,21 +66,19 @@
              padding-top: 50px;
          }
 
-
          .dropdown-content {
              display: none;
              position: absolute;
              background-color: #f9f9f9;
              min-width: 160px;
-             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
              z-index: 1;
              min-width: 200px;
-             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
              z-index: 1;
              height: 420px;
              overflow-y: auto;
          }
-
 
          .dropdown-content a {
              color: black;
@@ -89,14 +87,13 @@
              display: block;
          }
 
-
-         .dropdown-content a:hover {background-color: #f1f1f1}
-
+         .dropdown-content a:hover {
+             background-color: #f1f1f1
+         }
 
          .dropdown:hover .dropdown-content {
              display: block;
          }
-
 
          .dropdown:hover .dropbtn {
              background-color: #26C485;
@@ -116,6 +113,7 @@
              margin: 3em 0 0 3rem;
              overflow-y: auto;
          }
+
          .main-container {
              display: flex;
              flex-direction: row;
@@ -147,7 +145,7 @@
              margin: 50px 0 0 50px;
          }
 
-         .info-list{
+         .info-list {
              list-style-type: none;
              padding: 50px 0 0 50px;
              font-family: Roboto;
@@ -155,7 +153,7 @@
              color: black;
          }
 
-         .link-location{
+         .link-location {
              text-decoration: none;
          }
 
@@ -164,44 +162,6 @@
  {% endblock %}
 
   {% block content %}
-<<<<<<< HEAD
-      <link href="//maxcdngit statusgbootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
-            id="bootstrap-css">
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-      <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-      <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Roboto|Titillium+Web" rel="stylesheet">
-      <!------ Include the above in your HEAD tag ---------->
-
-      <div class="container-pick">
-          <div class="navbar">
-              <ul class="navbar-list">
-                  <li><h1 class="navbar-h1">Wing-Chun</h1></li>
-                  <li class="navbar-homelist"><a class="navbar-home" href="https://www.wingchun.nl/">Home</a></li>
-              </ul>
-          </div>
-      </div>
-      <div class="body">
-          <div class="dropdown">
-              <button class="dropbtn">Dropdown</button>
-              <div class="dropdown-content">
-                  <a href="#">Zuid-Holland</a>
-                  <a href="#">Noord-Holland</a>
-                  <a href="#">Groningen</a>
-                  <a href="#">Friesland</a>
-                  <a href="#">Drenthe</a>
-                  <a href="#">Overijssel</a>
-                  <a href="#">Flevoland</a>
-                  <a href="#">Gelderland</a>
-                  <a href="#">Utrecht</a>
-                  <a href="#">Zeeland</a>
-                  <a href="#">Noord-Brabant</a>
-                  <a href="#">Limburg</a>
-
-              </div>
-          </div>
-      </div>
-  {% endblock %}
-=======
 <link href="//maxcdngit statusgbootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
       id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
@@ -216,163 +176,162 @@
         </ul>
     </div>
 </div>
-      <div class="main-container">
-          <div class="container-yourinfo">
-              <div class="dropdowncontainer">
-                  <h1 class="container-yourinfo-h1">Kies hier uw regio</h1>
-                  <div class="dropdown">
-                      <button class="dropbtn">Regio</button>
-                      <div class="dropdown-content">
-                          <a href="#">Zuid-Holland</a>
-                          <a href="#">Noord-Holland</a>
-                          <a href="#">Groningen</a>
-                          <a href="#">Friesland</a>
-                          <a href="#">Drenthe</a>
-                          <a href="#">Overijssel</a>
-                          <a href="#">Flevoland</a>
-                          <a href="#">Gelderland</a>
-                          <a href="#">Utrecht</a>
-                          <a href="#">Zeeland</a>
-                          <a href="#">Noord-Brabant</a>
-                          <a href="#">Limburg</a>
-                      </div>
-                  </div><br>
-                  <h1 class="container-yourinfo-h1">Kies hier uw stad</h1>
-                  <div class="dropdown fix-padding-extra">
-                      <button class="dropbtn">Stad</button>
-                      <div class="dropdown-content">
-                          <a href="#">Voorburg</a>
-                          <a href="#">Ypenburg</a>
-                          <a href="#">Den Haag</a>
-                          <a href="#">Zoetermeer</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <ul class="container-location">
-              <table>
-                  <tr>
-                      <a class="link-location" href="registration.html.twig">
-                      <ul class="location-option">
-                          <li class="image-location">
+<div class="main-container">
+    <div class="container-yourinfo">
+        <div class="dropdowncontainer">
+            <h1 class="container-yourinfo-h1">Kies hier uw regio</h1>
+            <div class="dropdown">
+                <button class="dropbtn">Regio</button>
+                <div class="dropdown-content">
+                    <a href="#">Zuid-Holland</a>
+                    <a href="#">Noord-Holland</a>
+                    <a href="#">Groningen</a>
+                    <a href="#">Friesland</a>
+                    <a href="#">Drenthe</a>
+                    <a href="#">Overijssel</a>
+                    <a href="#">Flevoland</a>
+                    <a href="#">Gelderland</a>
+                    <a href="#">Utrecht</a>
+                    <a href="#">Zeeland</a>
+                    <a href="#">Noord-Brabant</a>
+                    <a href="#">Limburg</a>
+                </div>
+            </div>
+            <br>
+            <h1 class="container-yourinfo-h1">Kies hier uw stad</h1>
+            <div class="dropdown fix-padding-extra">
+                <button class="dropbtn">Stad</button>
+                <div class="dropdown-content">
+                    <a href="#">Voorburg</a>
+                    <a href="#">Ypenburg</a>
+                    <a href="#">Den Haag</a>
+                    <a href="#">Zoetermeer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="container-location">
+        <table>
+            <tr>
+                <a class="link-location" href="registration.html.twig">
+                    <ul class="location-option">
+                        <li class="image-location">
 
-                          </li>
-                          <li class="info-location">
-                              <ul class="info-list">
-                                  <li>Den Haag</li>
-                                  <li>Spartalaan 301</li>
-                                  <li>2796 KG</li>
-                                  <li>Wung Chun</li>
-                              </ul>
-                          </li>
-                      </ul>
-                      </a>
-                  </tr>
-                  <tr>
-                      <a class="link-location" href="registration.html.twig">
-                          <ul class="location-option">
-                              <li class="image-location">
+                        </li>
+                        <li class="info-location">
+                            <ul class="info-list">
+                                <li>Den Haag</li>
+                                <li>Spartalaan 301</li>
+                                <li>2796 KG</li>
+                                <li>Wung Chun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </a>
+            </tr>
+            <tr>
+                <a class="link-location" href="registration.html.twig">
+                    <ul class="location-option">
+                        <li class="image-location">
 
-                              </li>
-                              <li class="info-location">
-                                  <ul class="info-list">
-                                      <li>Den Haag</li>
-                                      <li>Spartalaan 301</li>
-                                      <li>2796 KG</li>
-                                      <li>Wung Chun</li>
-                                  </ul>
-                              </li>
-                          </ul>
-                      </a>
-                  </tr>
-                  <tr>
-                      <a class="link-location" href="registration.html.twig">
-                          <ul class="location-option">
-                              <li class="image-location">
+                        </li>
+                        <li class="info-location">
+                            <ul class="info-list">
+                                <li>Den Haag</li>
+                                <li>Spartalaan 301</li>
+                                <li>2796 KG</li>
+                                <li>Wung Chun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </a>
+            </tr>
+            <tr>
+                <a class="link-location" href="registration.html.twig">
+                    <ul class="location-option">
+                        <li class="image-location">
 
-                              </li>
-                              <li class="info-location">
-                                  <ul class="info-list">
-                                      <li>Den Haag</li>
-                                      <li>Spartalaan 301</li>
-                                      <li>2796 KG</li>
-                                      <li>Wung Chun</li>
-                                  </ul>
-                              </li>
-                          </ul>
-                      </a>
-                  </tr>
-                  <tr>
-                      <a class="link-location" href="registration.html.twig">
-                          <ul class="location-option">
-                              <li class="image-location">
+                        </li>
+                        <li class="info-location">
+                            <ul class="info-list">
+                                <li>Den Haag</li>
+                                <li>Spartalaan 301</li>
+                                <li>2796 KG</li>
+                                <li>Wung Chun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </a>
+            </tr>
+            <tr>
+                <a class="link-location" href="registration.html.twig">
+                    <ul class="location-option">
+                        <li class="image-location">
 
-                              </li>
-                              <li class="info-location">
-                                  <ul class="info-list">
-                                      <li>Den Haag</li>
-                                      <li>Spartalaan 301</li>
-                                      <li>2796 KG</li>
-                                      <li>Wung Chun</li>
-                                  </ul>
-                              </li>
-                          </ul>
-                      </a>
-                  </tr>
-                  <tr>
-                      <a class="link-location" href="registration.html.twig">
-                          <ul class="location-option">
-                              <li class="image-location">
+                        </li>
+                        <li class="info-location">
+                            <ul class="info-list">
+                                <li>Den Haag</li>
+                                <li>Spartalaan 301</li>
+                                <li>2796 KG</li>
+                                <li>Wung Chun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </a>
+            </tr>
+            <tr>
+                <a class="link-location" href="registration.html.twig">
+                    <ul class="location-option">
+                        <li class="image-location">
 
-                              </li>
-                              <li class="info-location">
-                                  <ul class="info-list">
-                                      <li>Den Haag</li>
-                                      <li>Spartalaan 301</li>
-                                      <li>2796 KG</li>
-                                      <li>Wung Chun</li>
-                                  </ul>
-                              </li>
-                          </ul>
-                      </a>
-                  </tr>
-                  <tr>
-                      <a class="link-location" href="registration.html.twig">
-                          <ul class="location-option">
-                              <li class="image-location">
+                        </li>
+                        <li class="info-location">
+                            <ul class="info-list">
+                                <li>Den Haag</li>
+                                <li>Spartalaan 301</li>
+                                <li>2796 KG</li>
+                                <li>Wung Chun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </a>
+            </tr>
+            <tr>
+                <a class="link-location" href="registration.html.twig">
+                    <ul class="location-option">
+                        <li class="image-location">
 
-                              </li>
-                              <li class="info-location">
-                                  <ul class="info-list">
-                                      <li>Den Haag</li>
-                                      <li>Spartalaan 301</li>
-                                      <li>2796 KG</li>
-                                      <li>Wung Chun</li>
-                                  </ul>
-                              </li>
-                          </ul>
-                      </a>
-                  </tr>
-                  <tr>
-                      <a class="link-location" href="registration.html.twig">
-                          <ul class="location-option">
-                              <li class="image-location">
+                        </li>
+                        <li class="info-location">
+                            <ul class="info-list">
+                                <li>Den Haag</li>
+                                <li>Spartalaan 301</li>
+                                <li>2796 KG</li>
+                                <li>Wung Chun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </a>
+            </tr>
+            <tr>
+                <a class="link-location" href="registration.html.twig">
+                    <ul class="location-option">
+                        <li class="image-location">
 
-                              </li>
-                              <li class="info-location">
-                                  <ul class="info-list">
-                                      <li>Den Haag</li>
-                                      <li>Spartalaan 301</li>
-                                      <li>2796 KG</li>
-                                      <li>Wung Chun</li>
-                                  </ul>
-                              </li>
-                          </ul>
-                      </a>
-                  </tr>
-              </table>
-            </ul>
-          </div>
-      </div>
-
-    {% endblock %}
+                        </li>
+                        <li class="info-location">
+                            <ul class="info-list">
+                                <li>Den Haag</li>
+                                <li>Spartalaan 301</li>
+                                <li>2796 KG</li>
+                                <li>Wung Chun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </a>
+            </tr>
+        </table>
+    </ul>
+</div>
+{% endblock %}

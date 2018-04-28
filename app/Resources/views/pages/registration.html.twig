@@ -2,6 +2,24 @@
 
  {% block stylesheets %}
      <style>
+         .hvr-grow {
+             display: inline-block;
+             vertical-align: middle;
+             transform: translateZ(0);
+             box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+             backface-visibility: hidden;
+             -moz-osx-font-smoothing: grayscale;
+             transition-duration: .3s;
+             transition-property: transform;
+         }
+
+         .hvr-grow:hover,
+         .hvr-grow:focus,
+         .hvr-grow:active {
+             transform: scale(1.02);
+
+         }
+
          * {
              padding: 0;
              margin: 0;
@@ -33,6 +51,7 @@
              text-decoration: none;
              padding-bottom: 8px;
              font-size: 22px;
+
          }
 
          .navbar-list {
@@ -53,13 +72,14 @@
              border: 2px solid #343F3E;
              width: 35vw;
              height: 83vh;
-             margin: 3em 0 0 15rem;
+             margin: 3em 0 0 13.2vw;
          }
 
          .main-container {
              display: flex;
              flex-direction: row;
              align-items: center;
+
          }
 
          .container-location {
@@ -120,6 +140,11 @@
              width: 100%;
          }
 
+         .fieldset-datepicker {
+             font-family: Roboto;
+             border: medium none !important;
+         }
+
          #contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
              width: 100%;
              border: 1px solid #CCC;
@@ -136,11 +161,16 @@
              border: 1px solid #AAA;
          }
 
+         #contact input:focus {
+             top: -12px;
+         }
+
          #contact textarea {
              height: 100px;
              max-width: 100%;
              resize: none;
          }
+
 
          #contact button[type="submit"] {
              cursor: pointer;
@@ -150,7 +180,7 @@
              color: #FFF;
              margin: 0 0 5px;
              padding: 10px;
-             font-size: 15px;
+             font-size: 22px;
              transition: .3s ease-in-out;
              height: 65px;
          }
@@ -159,7 +189,7 @@
              background: #27b885;
              -webkit-transition: background .3s ease-in-out;
              -moz-transition: background .3s ease-in-out;
-             transition: background-color .3s ease-in-out;
+             transition: .3s ease-in-out;
          }
 
          #contact button[type="submit"]:active {
@@ -193,57 +223,86 @@
  {% endblock %}
 
   {% block content %}
-<link href="//maxcdngit statusgbootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
-      id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Roboto|Titillium+Web" rel="stylesheet">
-<!------ Include the above in your HEAD tag ---------->
+      <link href="//maxcdngit statusgbootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+            id="bootstrap-css">
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Roboto|Titillium+Web" rel="stylesheet">
+      <!------ Include the above in your HEAD tag ---------->
+      <div class="container-pick">
+          <div class="navbar">
+              <ul class="navbar-list">
+                  <li><h1 class="navbar-h1">Wing-Chun</h1></li>
+                  <li class="navbar-homelist"><a class="navbar-home" href="https://www.wingchun.nl/">Home</a></li>
+              </ul>
+          </div>
+          <div class="main-container">
+              <div class="container-yourinfo">
+                  <h1 class="container-yourinfo-h1">Uw informatie</h1>
+                  <div class="container">
+                      <form id="contact" action="" method="post">
+                          <fieldset>
+                              <input placeholder="Voornaam" type="text" tabindex="1" required autofocus>
+                          </fieldset>
+                          <fieldset>
+                              <input placeholder="Achternaam" type="text" tabindex="2" required autofocus>
+                          </fieldset>
+                          <fieldset>
+                              <input placeholder="E-Mail" type="email" tabindex="3" required>
+                          </fieldset>
+                          <fieldset>
+                              <input placeholder="Telefoonnummer" type="tel" tabindex="4" required>
+                          </fieldset>
+                          <fieldset>
+                          <input placeholder="Geboortedatum" type="text" tabindex="5" required autofocus>
+                          </fieldset>
+                          {#<fieldset>#}
+                              {#<div class="fieldset-datepicker">#}
+                                   {#Kies uw geboortedatum:#}
+                                  {#<SELECT id="date" name="dd"></SELECT>#}
+                                  {#<SELECT id="month" name="mm"></SELECT>#}
+                                  {#<SELECT id="year" name="yyyy"></SELECT>#}
+                              {#</div>#}
+                          {#</fieldset>#}
+                          <fieldset>
+                              <textarea
+                                      placeholder="Heeft u blessures of iets anders waarmee wij rekening moeten houden? Als dit niet van toepassing is laat die veld dan leeg."
+                                      tabindex="5"></textarea>
+                          </fieldset>
+                          <fieldset>
+                              <button name="submit" type="submit" id="contact-submit" class="hvr-grow"
+                                      data-submit="...Sending">Doorgaan</button>
+                          </fieldset>
+                      </form>
+                  </div>
+              </div>
+              <div class="container-location">
+                  <h1 class="container-location-h1">Uw gekozen locatie</h1>
+              </div>
+          </div>
+      </div>
+  {% endblock %}
 
-<div class="container-pick">
+{#<script>#}
+    {#var monthtext = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];#}
 
-    <div class="navbar">
-        <ul class="navbar-list">
-            <li><h1 class="navbar-h1">Wing-Chun</h1></li>
-            <li class="navbar-homelist"><a class="navbar-home" href="https://www.wingchun.nl/">Home</a></li>
-        </ul>
-    </div>
+    {#function date_populate(dayfield, monthfield, yearfield) {#}
+        {#var today = new Date();#}
+        {#var dayfield = document.getElementById(dayfield)#}
+        {#var monthfield = document.getElementById(monthfield)#}
+        {#var yearfield = document.getElementById(yearfield)#}
+        {#for (var i = 0; i < 31; i++)#}
+            {#dayfield.options[i] = new Option(i + 1, i + 1)#}
+        {#dayfield.options[today.getDate()] = new Option(today.getDate(), today.getDate(), true, true) //select today's day#}
+        {#for (var m = 0; m < 12; m++)#}
+            {#monthfield.options[m] = new Option(monthtext[m], monthtext[m])#}
+        {#monthfield.options[today.getMonth()] = new Option(monthtext[today.getMonth()], monthtext[today.getMonth()], true, true) //select today's month#}
+        {#var thisyear = today.getFullYear()#}
+        {#for (var y = 0; y < 100; y++) {#}
+            {#yearfield.options[y] = new Option(thisyear, thisyear)#}
+            {#thisyear -= 1#}
+        {#}#}
+        {#yearfield.options[0] = new Option(today.getFullYear(), today.getFullYear(), true, true) //select today's year#}
+    {#}#}
 
-    <div class="main-container">
-        <div class="container-yourinfo">
-            <h1 class="container-yourinfo-h1">Uw informatie</h1>
-            <div class="container">
-                <form id="contact" action="" method="post">
-                    <fieldset>
-                        <input placeholder="Voornaam" type="text" tabindex="1" required autofocus>
-                    </fieldset>
-                    <fieldset>
-                        <input placeholder="Achternaam" type="text" tabindex="2" required autofocus>
-                    </fieldset>
-                    <fieldset>
-                        <input placeholder="E-Mail" type="email" tabindex="3" required>
-                    </fieldset>
-                    <fieldset>
-                        <input placeholder="Telefoonnummer" type="tel" tabindex="4" required>
-                    </fieldset>
-                    <fieldset>
-                        <input placeholder="geboortedatum" type="text" tabindex="5" required autofocus>
-                    </fieldset>
-                    <fieldset>
-                        <textarea placeholder="Heeft u blessures of iets anders waarmee wij rekening moeten houden?" tabindex="5" required></textarea>
-                    </fieldset>
-                    <fieldset>
-                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-                    </fieldset>
-                </form>
-
-            </div>
-        </div>
-        <div class="container-location">
-            <h1 class="container-location-h1">Uw gekozen locatie</h1>
-
-        </div>
-    </div>
-</div>
-{% endblock %}
-
+{#</script>#}
+{#<script type="text/javascript">date_populate("date", "month", "year");</script>#}
